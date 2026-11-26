@@ -168,7 +168,20 @@ export const ALL_AMENITIES = [
   "Library",
 ];
 
-export const LOCALITIES = ["Vijay Nagar", "Bhawarkua", "Palasia", "Rau"];
+export const LOCALITIES = [
+  "Vijay Nagar",
+  "Bhawarkua",
+  "Scheme No. 54",
+  "Scheme No. 78",
+  "Manorama Ganj",
+  "Navlakha",
+  "Geeta Bhawan",
+  "New Palasia",
+  "South Tukoganj",
+  "Tilak Nagar",
+  "Chhawni",
+  "Vishnu Puri",
+];
 export const CATEGORIES: Hostel["category"][] = ["Boys", "Girls", "Co-Living"];
 
 export function getHostelById(id: string): Hostel | undefined {

@@ -17,7 +17,7 @@ export default function Login() {
     if (user) navigate("/explore", { replace: true });
   }, [user, navigate]);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(undefined);
     const er: FieldErrors = {};
@@ -26,7 +26,7 @@ export default function Login() {
     if (!isRequired(password)) er.password = "Enter your password.";
     setErrors(er);
     if (Object.keys(er).length) return;
-    const res = login(email, password);
+   const res = await login(email, password);
     if (!res.ok) setFormError(res.error);
     else navigate("/explore");
   };
@@ -42,10 +42,7 @@ export default function Login() {
           <p className="text-slate-500 text-sm">Log in to manage your wishlist and enquiries.</p>
         </div>
 
-        <div className="flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 mb-5">
-          <ShieldAlert size={15} />
-          Demo authentication only. Accounts are stored in your browser, not on a server.
-        </div>
+        
 
         <form onSubmit={submit} noValidate className="card p-6 space-y-4">
           <div>

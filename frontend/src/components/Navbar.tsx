@@ -8,23 +8,23 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/explore", label: "Explore Hostels" },
   { to: "/wishlist", label: "Wishlist" },
-  { to: "/bookings", label: "My Bookings" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
-  const { count } = useWishlist();
+const { count, clear } = useWishlist();
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    setOpen(false);
-    navigate("/");
-  };
-
+const handleLogout = () => {
+  clear();
+  localStorage.removeItem("ooc_wishlist");
+  logout();
+  setOpen(false);
+  navigate("/");
+};
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
       <nav className="container-app flex h-16 items-center justify-between">

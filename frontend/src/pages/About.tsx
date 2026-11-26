@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Building2, Compass, Heart, MapPin, ShieldCheck, Users } from "lucide-react";
 import { AREAS } from "@/data/areas";
-import DemoBanner from "@/components/DemoBanner";
 
 export default function About() {
   return (
@@ -19,9 +18,7 @@ export default function About() {
           before you arrive.
         </p>
 
-        <div className="mt-6">
-          <DemoBanner message="OutOfCity is a demo student project. Listings are sample data, not real or verified properties, and no actual bookings can be made." />
-        </div>
+  
       </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

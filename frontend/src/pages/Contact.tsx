@@ -36,7 +36,7 @@ export default function Contact() {
           <h1 className="mt-3 font-display text-3xl font-bold text-slate-900">Get in touch</h1>
           <p className="mt-3 text-slate-600">
             Questions, feedback or listing requests? Send us a message and we'll get back to you.
-            This is a demo form — messages are not actually sent or stored anywhere.
+
           </p>
 
           <div className="mt-8 space-y-4">
